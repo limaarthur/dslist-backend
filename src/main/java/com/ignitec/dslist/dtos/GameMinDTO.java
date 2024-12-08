@@ -1,6 +1,7 @@
 package com.ignitec.dslist.dtos;
 
 import com.ignitec.dslist.entities.Game;
+import com.ignitec.dslist.projection.GameMinProjection;
 
 public class GameMinDTO {
 
@@ -23,6 +24,14 @@ public class GameMinDTO {
         year = entity.getYear();
         imgUrl = entity.getImgUrl();
         shortDescription = entity.getShortDescription();
+    }
+
+    public GameMinDTO(GameMinProjection projection) {
+        id = projection.getId();
+        title = projection.getTitle();
+        year = projection.getGameYear();
+        imgUrl = projection.getImgUrl();
+        shortDescription = projection.getShortDescription();
     }
 
     public String getTitle() {
